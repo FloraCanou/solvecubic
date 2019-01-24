@@ -1,4 +1,4 @@
-/* Copyright 2019 Flora Canou | V. C0-1.0.0 | Cubic Equation Solver
+/* Copyright 2019 Flora Canou | V. C0-1.0.1 | Cubic Equation Solver
  * This Source Code Form is licensed under the Mozilla Public License, v. 2.0. 
  * If a copy of the MPL was not distributed with this file, you can obtain one at https://mozilla.org/MPL/2.0/. 
  * The program solves cubic equation in trigonometric/hyperbolic method. 
@@ -8,7 +8,7 @@
  #include <float.h>
  #define pi	3.14159265359
  
-int cubic_equation_solver (double a, double b, double c, double d, double *x)
+int solvecubic (double a, double b, double c, double d, double *x)
 {
 	int n = 0; //number of real solutions
 	if (fabs(a) < DBL_EPSILON)
