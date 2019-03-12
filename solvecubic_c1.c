@@ -1,13 +1,13 @@
-/* Copyright 2019 Flora Canou | V. C0-1.0.1 | Cubic Equation Solver
+/* Copyright 2019 Flora Canou | V. C1-1.0.2 | Cubic Equation Solver
  * This Source Code Form is licensed under the Mozilla Public License, v. 2.0. 
  * If a copy of the MPL was not distributed with this file, you can obtain one at https://mozilla.org/MPL/2.0/. 
  * The program solves cubic equation in trigonometric/hyperbolic method. 
  */
  
- #include <math.h>
- #include <float.h>
- #define pi	3.14159265359
- 
+#include <math.h>
+#include <float.h>
+#define TAU	6.28318530718 //2*PI
+
 int solvecubic (double a, double b, double c, double d, double *x)
 {
 	int n = 0; //number of real solutions
@@ -60,8 +60,8 @@ int solvecubic (double a, double b, double c, double d, double *x)
 			{
 				u = sqrt (-4*p/3); 
 				x[0] = u * cos (acos (-4*q/(u*u*u)) / 3) - b / (3*a);
-				x[1] = u * cos ((acos (-4*q/(u*u*u)) - 2*pi) / 3) - b / (3*a);
-				x[2] = u * cos ((acos (-4*q/(u*u*u)) + 2*pi) / 3) - b / (3*a);
+				x[1] = u * cos ((acos (-4*q/(u*u*u)) - TAU) / 3) - b / (3*a);
+				x[2] = u * cos ((acos (-4*q/(u*u*u)) + TAU) / 3) - b / (3*a);
 			}
 		}
 		else // one real solution
@@ -83,4 +83,3 @@ int solvecubic (double a, double b, double c, double d, double *x)
 	}
 	return n;
 }
-
